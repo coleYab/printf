@@ -37,7 +37,7 @@ int int_printer(va_list va, char *buffer_storge, int *index, int *len)
 */
 void print_number(char *arr, unsigned long n, unsigned long base, int *index, int *len)
 {
-	char *symbols, *symbols2;
+	char *symbols;
 
 	symbols = "0123456789abcdef";
 
