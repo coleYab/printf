@@ -33,8 +33,8 @@ int string_printer(va_list va, char *buffer_storge, int *index, int *len)
 	int i = -1;
 
 	str = va_arg(va, char *);
-	if (!str)
-		str = "(null)";
+	if (str == NULL)
+		str = "\0";
 
 	while (str[++i])
 	{

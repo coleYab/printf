@@ -13,6 +13,8 @@ int _printf(const char *format, ...)
 	int i = -1, index = 0, len = 0;
 	char arr[1024];
 
+	if (!format || (format[i + 1] == '%' && format[i + 2])
+		return (-1);
 	va_start(ap, format);
 	while (format[++i])
 	{
@@ -30,7 +32,7 @@ int _printf(const char *format, ...)
 	}
 
 	if (index)
-		len = write_std(arr, &index);
+		len += write_std(arr, &index);
 
 	va_end(ap);
 	return (len);
