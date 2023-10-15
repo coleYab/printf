@@ -35,7 +35,7 @@ int int_printer(va_list va, char *buffer_storge, int *index, int *len)
  *
  * Return: the amount of char copied.
 */
-void print_number(char *arr, unsigned long n, int base, int *index, int *len)
+void print_number(char *arr, unsigned long n, unsigned long base, int *index, int *len)
 {
 	char *symbols, *symbols2;
 
