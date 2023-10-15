@@ -22,7 +22,7 @@ int percent_printer(va_list va __attribute__ ((unused)), int *len)
  *
  * Return: the amount of char copied.
 */
-int string_printer(va_list va, char *buffer_storge, int *index, int *len)
+int string_printer(va_list va, int *len)
 {
 	char *str = NULL;
 	char arr[] = "(null)";
