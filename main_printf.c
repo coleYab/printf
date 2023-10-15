@@ -13,9 +13,9 @@ int _printf(const char *format, ...)
 	int i = -1, index = 0, len = 0;
 	char arr[1024];
 
-	if (!format || (format[i + 1] == '%' && format[i + 2])
-		return (-1);
 	va_start(ap, format);
+	if (!format || (format[i + 1] == '%' && format[i + 2]))
+		return (-1);
 	while (format[++i])
 	{
 		if (format[i] == '%')
@@ -26,11 +26,8 @@ int _printf(const char *format, ...)
 			i += 1;
 		}
 		else
-		{
 			copy(arr, format[i], &index, &len);
-		}
 	}
-
 	if (index)
 		len += write_std(arr, &index);
 
