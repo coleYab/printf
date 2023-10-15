@@ -25,7 +25,7 @@ int _printf(const char *format, ...)
 			if (l == -1)
 			{
 				copy('%', &len);
-				copy(format[i], &len);
+				copy(format[i + 1], &len);
 			}
 			i++;
 		}
