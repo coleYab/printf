@@ -10,7 +10,7 @@
 int _printf(const char *format, ...)
 {
 	va_list ap;
-	int i = -1, len = 0;
+	int i = -1, len = 0, l = 1;
 
 	va_start(ap, format);
 	if (!format || (format[0] == '%' && !format[1]))
@@ -21,7 +21,13 @@ int _printf(const char *format, ...)
 		{
 			if (format[i + 1] == '\0')
 				break;
-			i += get_function(format[i + 1], ap, &len);
+			l = get_function(format[i + 1], ap, &len);
+			if (l == -1)
+			{
+				copy('%', &len);
+				copy(format[i], &len);
+			}
+			i++;
 		}
 		else
 		{
