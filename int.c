@@ -19,7 +19,7 @@ int int_printer(va_list va, int *len)
 	}
 	print_number((unsigned int)n, 10, len);
 
-	return (0);
+	return (1);
 }
 
 /**
