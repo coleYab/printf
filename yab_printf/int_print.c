@@ -16,7 +16,7 @@ int int_printer(va_list va, char *buffer_storge, int *index, int *len)
 
 	if (n < 0)
 	{
-		copy(arr, '-', index, len);
+		copy(buffer_storge, '-', index, len);
 		n = -n;
 	}
 	print_number(buffer_storge, n, 10, index, len);
@@ -34,7 +34,7 @@ int int_printer(va_list va, char *buffer_storge, int *index, int *len)
  *
  * Return: void.
 */
-void print_number(char *arr, unsigned long n, int base, int *index, int *len)
+void print_number(char *arr, unsigned long n, unsigned long base, int *index, int *len)
 {
 	char *symbols;
 
