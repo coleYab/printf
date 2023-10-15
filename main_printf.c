@@ -26,13 +26,9 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			copy(arr, format[i], &index, &len);
+			copy(format[i], &len);
 		}
 	}
-
-	if (index)
-		len += write_std(arr, &index);
-
 	va_end(ap);
 	return (len);
 }
