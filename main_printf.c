@@ -14,7 +14,7 @@ int _printf(const char *format, ...)
 	char arr[1024];
 
 	va_start(ap, format);
-	if (!format || (format[i + 1] == '%' && format[i + 2]))
+	if (format == NULL || (format[i + 1] == '%' && format[i + 2] == '\0'))
 		return (-1);
 	while (format[++i])
 	{
@@ -50,8 +50,8 @@ int get_function(char specifier, char *buffer_storage,
 {
 	int i = -1;
 	Format formats_list[] = {
-	{'c', char_printer}, {'d', int_printer}, {'i', int_printer},
-	{'s', string_printer}, {'%', percent_printer}, {'\0', NULL}
+	{'c', char_printer}, {'s', string_printer},
+	{'%', percent_printer}, {'\0', NULL}
 	};
 
 	while (formats_list[++i].specifiers)
