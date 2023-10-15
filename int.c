@@ -39,7 +39,7 @@ void print_number(unsigned long n, unsigned long base, int *len)
 
 	if (n < base)
 	{
-		copy(arr, symbols[n], index, len);
+		copy(symbols[n], len);
 	}
 	else
 	{
