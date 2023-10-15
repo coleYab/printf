@@ -12,9 +12,9 @@ int _printf(const char *format, ...)
 	va_list ap;
 	int i = -1, len = 0, l = 1;
 
+	if (format == NULL || (format[0] == '%' && !format[1]))
+		return (-1);
 	va_start(ap, format);
-	if (!format || (format[0] == '%' && !format[1]))
-		return (i);
 	while (format[++i])
 	{
 		if (format[i] == '%')
