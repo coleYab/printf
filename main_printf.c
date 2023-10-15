@@ -22,8 +22,7 @@ int _printf(const char *format, ...)
 		{
 			if (format[i + 1] == '\0')
 				break;
-			get_function(format[i + 1], arr, &index, ap, &len);
-			i += 1;
+			i += get_function(format[i + 1], ap, &len);
 		}
 		else
 		{
@@ -40,16 +39,13 @@ int _printf(const char *format, ...)
 
 /**
  * get_function - gets the function to copy the chars.
- * @specifier: the format specifier that is passed to the function.
- * @buffer_storage: stores the buffer.
- * @index: the indes of the arr.
+ * @specifier: the format specifier that is passed to the function
  * @va: the va_ list.
  * @len: the length that is printed.
  *
  * Return: the amount of chars added to buffer.
 */
-int get_function(char specifier, char *buffer_storage,
-		int *index, va_list va, int *len)
+int get_function(char specifier, va_list va, int *len)
 {
 	int i = -1;
 	Formats formats_list[] = {
@@ -60,8 +56,8 @@ int get_function(char specifier, char *buffer_storage,
 	while (formats_list[++i].specifiers)
 	{
 		if (formats_list[i].specifiers == specifier)
-			return ((*formats_list[i].fun_ptr)(va, buffer_storage, index, len));
+			return ((*formats_list[i].fun_ptr)(va, len));
 	}
 
-	return (0);
+	return (-1);
 }
