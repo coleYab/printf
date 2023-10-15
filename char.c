@@ -36,7 +36,7 @@ int string_printer(va_list va, char *buffer_storge, int *index, int *len)
 		copy(str[i], len);
 	}
 
-	return (i);
+	return (1);
 }
 
 
