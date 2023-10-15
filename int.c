@@ -3,23 +3,21 @@
 /**
  * int_printer - prints the number in any base.
  *
- * @va: the variadic arg list.
- * @buffer_storge: the buffer to store chars.
- * @index: the current index position.
+ * @va: the variadic arg list
  * @len: the count of printed bytes
  *
  * Return: the always one.
 */
-int int_printer(va_list va, char *buffer_storge, int *index, int *len)
+int int_printer(va_list va, int *len)
 {
 	long int n = va_arg(va, int);
 
 	if (n < 0)
 	{
-		copy(buffer_storge, '-', index, len);
+		copy('-', len);
 		n *= -1;
 	}
-	print_number(buffer_storge, (unsigned int)n, 10, index, len);
+	print_number((unsigned int)n, 10, len);
 
 	return (0);
 }
@@ -27,15 +25,13 @@ int int_printer(va_list va, char *buffer_storge, int *index, int *len)
 /**
  * print_number - prints the number in hex_capital.
  *
- * @arr: the pointer to a string.
  * @n: the number to be changed.
- * @base: the base to be printed.
- * @index: the current index position.
+ * @base: the base to be printed
  * @len: the length.
  *
  * Return: the amount of char copied.
 */
-void print_number(char *arr, unsigned long n, unsigned long base, int *index, int *len)
+void print_number(unsigned long n, unsigned long base, int *len)
 {
 	char *symbols;
 
@@ -47,7 +43,7 @@ void print_number(char *arr, unsigned long n, unsigned long base, int *index, in
 	}
 	else
 	{
-		print_number(arr, n / base, base, index, len);
-		copy(arr, symbols[n % base], index, len);
+		print_number(n / base, base, len);
+		copy(symbols[n % base], len);
 	}
 }
