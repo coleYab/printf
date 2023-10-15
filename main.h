@@ -26,21 +26,10 @@ int char_printer(va_list va, char *, int *, int *);
 int int_printer(va_list va, char *, int *, int *);
 int string_printer(va_list va, char *, int *, int *);
 int percent_printer(va_list va __attribute__((unused)), char *, int *, int *);
-int binary_printer(va_list va, char *, int *, int *);
-int hex_printer(va_list va, char *, int *, int *);
-int hex_cap_printer(va_list va, char *, int *, int *);
-int octal_printer(va_list va, char *, int *, int *);
-int adress_printer(va_list va, char *, int *, int *);
-int rot_13_printer(va_list va, char *, int *, int *);
-int string_with_ascii(va_list va, char *, int *, int *);
-int reverse_printer(va_list va, char *, int *, int *);
-void rev_copy(char *, char *, int *, int *);
 int get_function(char, char *, int *, va_list va, int *);
 int write_std(char *, int *);
 void copy(char *, char c, int *, int *);
 int check_1024(char *, int *);
-void print_number(char *, unsigned long n, int, int *, int *);
-void rot_13(char *, char *, int *, int *);
-int rot(char c);
+void print_number(char *, unsigned long n, unsigned long, int *, int *);
 
 #endif
