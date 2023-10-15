@@ -10,5 +10,5 @@
 */
 void copy(char c, int *len)
 {
-	*len += return (write(1, c, 1));
+	*len += write(1, &c, 1);
 }
