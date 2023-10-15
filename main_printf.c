@@ -28,7 +28,7 @@ int _printf(const char *format, ...)
 		else
 			copy(arr, format[i], &index, &len);
 	}
-	if (index)
+	if (index != 0)
 		len += write_std(arr, &index);
 
 	va_end(ap);

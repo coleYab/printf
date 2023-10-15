@@ -34,7 +34,7 @@ int string_printer(va_list va, char *buffer_storge, int *index, int *len)
 
 	str = va_arg(va, char *);
 	if (str == NULL)
-		str = "\0";
+		str = "(null)\0";
 
 	while (str[++i])
 	{
@@ -57,9 +57,9 @@ int string_printer(va_list va, char *buffer_storge, int *index, int *len)
 */
 int char_printer(va_list va, char *buffer_storge, int *index, int *len)
 {
-	int c = va_arg(va, int);
+	char c = (char)(va_arg(va, int));
 
-	copy(buffer_storge, (char)c, index, len);
+	copy(buffer_storge, c, index, len);
 
 	return (1);
 }
