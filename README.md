@@ -1,19 +1,32 @@
 # _printf  - one of the greatest functions of C.
+This is one of the highest rated team projects given as a part of ALX software engineering course given for one year. 
+
 ## DESCRIPTION
 
-The `_printf( )` function writes to stdout the arguments that make up the argument list as specified by the string pointed to by format. The `_printf( )` function returns the number of characters actually printed. A negative value is returns if it fails to print.
+The `_printf( )` function writes to stdout the arguments that make up the argument list as specified by the string pointed to by format. The `_printf( )` function returns the number of characters actually printed. A negative value is returns if it fails to print. 
+
+We used the text [`Secrets of printf`](https://intranet.alxswe.com/rltoken/7Vw7aUWgwC7JYUrqI4bh4Q) by Professor Don Colton as a resource.
+## COMPILATION INSTRUCTION
+
+The code has to be generated with `gcc` by the following flags `-Wall`  `-Wextra`  `-Werror` `-pedantic` `-Wno-format` `-std=gnu89`.
+
+You can read more about the compilation flags [here](https:\\www.gnu.com). 
+
+```bash
+gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c
+```
 
 ## FORMAT SPECIFIERS
 
 The FORMAT argument is a string that may contain format specifiers, each beginning with a '%' character, followed by a specifier character.
 
-- `%s`: Prints a string to the std output if no string is passed prints null insted of the sting.
+- `%s`: Prints a string to the stdout if no string is passed prints null instead of the sting.
 
 - `%d`: Print a an integer in base 10.
 
 - `%c`: Print a character that is passed by the user.
 
-- `%%`: Print the '%' sign to the std output.
+- `%%`: Print the '%' sign to the stdout.
 
 - `%r` : Prints a reverse of a string to the stdout.
 
@@ -30,6 +43,10 @@ The FORMAT argument is a string that may contain format specifiers, each beginni
 - `%p` : Prints the memory location of a variable.
 
 - `%S` : Prints a string after converting non printable char to their ascii value.
+
+## Conversion specifiers 
+
+This function still has a problem on dealing with the conversion specifiers.
 
 ## ARGUMENTS
 
@@ -83,17 +100,16 @@ Reverse of Reverse == esreveR
 
 ## AUTHORS
 
-The `_printf` function was written by Farida Alshaama and Yeabsira Moges.
+The `_printf` function was built by [Farida Alshaama](https:\\www.github.com\faridaalshaama) and [Yeabsira Moges](https:\\www.github.com\coleYab).
 
 ## REPORTING BUGS
 
-You can report bugs for maintainancd by the following email adresses.
+You can report bugs for maintenance by the following email addresses.
 
-Yeabsira Moges - yabume123@gmail.com
+Yeabsira Moges - [yabume123@gmail.com](yabume123@gmail.com)
 
-Farida Alshaama - faridaalshamaa@gmail.com
+Farida Alshaama - [faridaalshaama@gmail.com](faridaalshaama@gmail.com)
 
 ## DISCLAIMER
 
-This is a simplified man page for the `_printf` command and may not cover all options or behaviors. Refer to the official documentation of `printf` function for more details.
-
+This is the project that is aimed to teach us about C programming in the harder way. For more information take look for the official website of [ALX Africa](https://www.alxafrica.com) you may find suitable program for you. 
