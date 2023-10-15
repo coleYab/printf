@@ -10,8 +10,7 @@
 int _printf(const char *format, ...)
 {
 	va_list ap;
-	int i = -1, index = 0, len = 0;
-	char arr[1024];
+	int i = -1, len = 0;
 
 	va_start(ap, format);
 	if (!format || (format[0] == '%' && !format[1]))
