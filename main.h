@@ -18,18 +18,16 @@
 typedef struct Format_specifier
 {
 	char specifiers;
-	int (*fun_ptr)(va_list, char *, int *, int *);
+	int (*fun_ptr)(va_list, int *);
 } Formats;
 
 int _printf(const char *format, ...);
-int char_printer(va_list va, char *, int *, int *);
-int int_printer(va_list va, char *, int *, int *);
-int string_printer(va_list va, char *, int *, int *);
-int percent_printer(va_list va __attribute__((unused)), char *, int *, int *);
-int get_function(char, char *, int *, va_list va, int *);
-int write_std(char *, int *);
-void copy(char *, char c, int *, int *);
-int check_1024(char *, int *);
-void print_number(char *, unsigned long n, unsigned long, int *, int *);
+int char_printer(va_list va, int *);
+int int_printer(va_list va, int *);
+int string_printer(va_list va, int *);
+int percent_printer(va_list va __attribute__((unused)), int *);
+int get_function(char, va_list va, int *);
+void copy(char c, int *);
+void print_number(unsigned long n, unsigned long, int *);
 
 #endif
