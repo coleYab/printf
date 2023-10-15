@@ -30,11 +30,12 @@ int percent_printer(va_list va __attribute__((unused)),
 int string_printer(va_list va, char *buffer_storge, int *index, int *len)
 {
 	char *str;
+	char array[] = "(null)";
 	int i = -1;
 
 	str = va_arg(va, char *);
 	if (str == NULL)
-		str = "(null)\0";
+		str = array;
 
 	while (str[++i])
 	{

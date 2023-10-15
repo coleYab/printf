@@ -1,5 +1,5 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef PRINTF_H
+#define PRINTF_H
 
 #include <stdlib.h>
 #include <stdarg.h>
@@ -10,27 +10,37 @@
 #include <stddef.h>
 
 /**
- * struct Format_specifier - struct for the enitre printf
- * @specifiers: the variable format specifiers
- * @fun_ptr: function pointer.
+ * struct Format_specifier - stores the format specifier for the printf funct
  *
+ * @specifiers: characters that will be used as format specifier
+ * @fun_ptr: a pointer to specific function that will perform the task
  */
 typedef struct Format_specifier
 {
 	char specifiers;
 	int (*fun_ptr)(va_list, char *, int *, int *);
-} Format;
+} Formats;
 
 int _printf(const char *format, ...);
-int char_printer(va_list, char *, int *, int *);
-int int_printer(va_list, char *, int *index, int *len);
-int string_printer(va_list, char *buffer_storge, int *index, int *len);
+int char_printer(va_list va, char *, int *, int *);
+int int_printer(va_list va, char *, int *, int *);
+int string_printer(va_list va, char *, int *, int *);
 int percent_printer(va_list va __attribute__((unused)), char *, int *, int *);
-int get_function(char, char *, int *, va_list, int *);
-int write_std(char *str, int *index);
-void copy(char *arr, char c, int *index, int *len);
-int check_1024(char *arr, int *index);
-void print_number(char *, long n, int, int *, int *);
+int binary_printer(va_list va, char *, int *, int *);
+int hex_printer(va_list va, char *, int *, int *);
+int hex_cap_printer(va_list va, char *, int *, int *);
+int octal_printer(va_list va, char *, int *, int *);
+int adress_printer(va_list va, char *, int *, int *);
+int rot_13_printer(va_list va, char *, int *, int *);
+int string_with_ascii(va_list va, char *, int *, int *);
+int reverse_printer(va_list va, char *, int *, int *);
+void rev_copy(char *, char *, int *, int *);
+int get_function(char, char *, int *, va_list va, int *);
+int write_std(char *, int *);
+void copy(char *, char c, int *, int *);
+int check_1024(char *, int *);
+void print_number(char *, unsigned long n, int, int *, int *);
+void rot_13(char *, char *, int *, int *);
+int rot(char c);
 
 #endif
-

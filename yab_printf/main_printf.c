@@ -14,8 +14,10 @@ int _printf(const char *format, ...)
 	char arr[1024];
 
 	va_start(ap, format);
-	if (!format || (format[0] == '%' && format[1]))
-		return (i);
+	if (format == NULL || (format[i + 1] == '%' && format[i + 2] == '\0'))
+		return (-1);
+	if (format[0] == '\0')
+		return (0);
 	while (format[++i])
 	{
 		if (format[i] == '%')
@@ -26,13 +28,10 @@ int _printf(const char *format, ...)
 			i += 1;
 		}
 		else
-		{
 			copy(arr, format[i], &index, &len);
-		}
 	}
-
-	if (index)
-		len = write_std(arr, &index);
+	if (index != 0)
+		len += write_std(arr, &index);
 
 	va_end(ap);
 	return (len);
@@ -49,13 +48,13 @@ int _printf(const char *format, ...)
  * Return: the amount of chars added to buffer.
 */
 int get_function(char specifier, char *buffer_storage,
-		int *index, va_list va, int *len)
+				int *index, va_list va, int *len)
 {
 	int i = -1;
-	Formats formats_list[] = {
-		{ 'c', char_printer}, { 'd', int_printer}, { 'i', int_printer},
-		{ 's', string_printer}, { '%', percent_printer}, {'\0', NULL}
-		};
+	Format formats_list[] = {
+	{'c', char_printer}, {'s', string_printer},
+	{'%', percent_printer}, {'\0', NULL}
+	};
 
 	while (formats_list[++i].specifiers)
 	{
@@ -65,3 +64,4 @@ int get_function(char specifier, char *buffer_storage,
 
 	return (0);
 }
+
