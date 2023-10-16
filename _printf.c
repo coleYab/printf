@@ -10,27 +10,28 @@
 int _printf(const char *format, ...)
 {
 	va_list ap;
-	int i = -1, index = 0, len = 0;
+	int i = -1, index = 0, len = 0, k = 1;
 	char arr[1024];
 
 	va_start(ap, format);
-	if (format == NULL || (format[i + 1] == '%' && format[i + 2] == '\0'))
+	if (!format || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
-	if (format[0] == '\0')
-		return (0);
 	while (format[++i])
 	{
-		if (format[i] == '%')
+		if (format[i] == '%' && format[i + 1])
 		{
-			if (format[i + 1] == '\0')
-				break;
-			get_function(format[i + 1], arr, &index, ap, &len);
+			k = get_function(format[i + 1], arr, &index, ap, &len);
+			if (k == -1)
+			{
+				copy(arr, '%', index, len);
+				copy(arr, format[i + 1], index, len);
+			}
 			i += 1;
 		}
 		else
 			copy(arr, format[i], &index, &len);
 	}
-	if (index != 0)
+	if (index > 0)
 		len += write_std(arr, &index);
 
 	va_end(ap);
@@ -51,17 +52,15 @@ int get_function(char specifier, char *buffer_storage,
 				int *index, va_list va, int *len)
 {
 	int i = -1;
-	Format formats_list[] = {
-	{'c', char_printer}, {'s', string_printer},
-	{'%', percent_printer}, {'\0', NULL}
-	};
-
+	Formats formats_list[] = {
+		{ 'c', char_printer}, { 'd', dec_printer}, { 'i', int_printer},
+		{ 's', string_printer}, { '%', percent_printer}, {'\0', NULL}
+		};
 	while (formats_list[++i].specifiers)
 	{
 		if (formats_list[i].specifiers == specifier)
 			return ((*formats_list[i].fun_ptr)(va, buffer_storage, index, len));
 	}
 
-	return (0);
+	return (-1);
 }
-
