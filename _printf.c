@@ -23,8 +23,8 @@ int _printf(const char *format, ...)
 			k = get_function(format[i + 1], arr, &index, ap, &len);
 			if (k == -1)
 			{
-				copy(arr, '%', index, len);
-				copy(arr, format[i + 1], index, len);
+				copy(arr, '%', &index, &len);
+				copy(arr, format[i + 1], &index, &len);
 			}
 			i += 1;
 		}
