@@ -10,55 +10,58 @@
 int _printf(const char *format, ...)
 {
 	va_list ap;
-	int i = -1, len = 0, l = 1;
+	int i = -1, index = 0, len = 0;
+	char arr[1024];
 
-	if (format == NULL || (format[0] == '%' && !format[1]))
-		return (-1);
 	va_start(ap, format);
+	if (format == NULL || (format[i + 1] == '%' && format[i + 2] == '\0'))
+		return (-1);
+	if (format[0] == '\0')
+		return (0);
 	while (format[++i])
 	{
 		if (format[i] == '%')
 		{
 			if (format[i + 1] == '\0')
 				break;
-			l = get_function(format[i + 1], ap, &len);
-			if (l == -1)
-			{
-				copy('%', &len);
-				copy(format[i + 1], &len);
-			}
-			i++;
+			get_function(format[i + 1], arr, &index, ap, &len);
+			i += 1;
 		}
 		else
-		{
-			copy(format[i], &len);
-		}
+			copy(arr, format[i], &index, &len);
 	}
+	if (index != 0)
+		len += write_std(arr, &index);
+
 	va_end(ap);
 	return (len);
 }
 
 /**
  * get_function - gets the function to copy the chars.
- * @specifier: the format specifier that is passed to the function
+ * @specifier: the format specifier that is passed to the function.
+ * @buffer_storage: stores the buffer.
+ * @index: the indes of the arr.
  * @va: the va_ list.
  * @len: the length that is printed.
  *
  * Return: the amount of chars added to buffer.
 */
-int get_function(char specifier, va_list va, int *len)
+int get_function(char specifier, char *buffer_storage,
+				int *index, va_list va, int *len)
 {
 	int i = -1;
-	Formats formats_list[] = {
-		{ 'c', char_printer}, { 'd', int_printer}, { 'i', int_printer},
-		{ 's', string_printer}, { '%', percent_printer}, {'\0', NULL}
-		};
+	Format formats_list[] = {
+	{'c', char_printer}, {'s', string_printer},
+	{'%', percent_printer}, {'\0', NULL}
+	};
 
 	while (formats_list[++i].specifiers)
 	{
 		if (formats_list[i].specifiers == specifier)
-			return ((*formats_list[i].fun_ptr)(va, len));
+			return ((*formats_list[i].fun_ptr)(va, buffer_storage, index, len));
 	}
 
-	return (-1);
+	return (0);
 }
+
