@@ -4,7 +4,7 @@
  * reverse_printer - copies the reverse.
  *
  * @va: the string literal.
- * @buffer_storge: the char arr to store buffer.
+ * @buffer_storge: the char arr to storer.
  * @index: the current arr location.
  * @len: the len of chr printed.
  *
