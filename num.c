@@ -4,7 +4,7 @@
  * dec_printer - prints the number in base 10.
  *
  * @va: the variadic arg list.
- * @buffer_storge: the buffer to store chars.
+ * @buffer_storge: the buffer to.
  * @index: the current index position.
  * @len: the count of printed bytes
  *
