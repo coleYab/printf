@@ -20,7 +20,7 @@ int HEX_printer(va_list va, char *buffer_storge, int *index, int *len)
 }
 
 /**
- * print_number_HEX - prints ther.
+ * print_number_HEX -  .
  *
  * @arr: the pointer to a string.
  * @n: the number to be changed.
