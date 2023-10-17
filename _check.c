@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * check_1024 - checks if the bytes exceeds 1024 and works accordingly.
+ * check_1024 - checks if the bytes exceeds 1024.
  * @arr: is the array that is to be printed.
  * @index: the total occupied bytes of arr.
  *
