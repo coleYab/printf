@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * dec_printer - prints the number in base 10 as i.
+ * dec_printer - prints the number in base 10.
  *
  * @va: the variadic arg list.
  * @buffer_storge: the buffer to string.
