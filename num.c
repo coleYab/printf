@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * dec_printer - prints the number in base 10 as.
+ * dec_printer - prints the number in base 10 as if is is is is is is is is is is is is is i si si.
  *
  * @va: the variadic arg list.
  * @buffer_storge: the buffer to string.
