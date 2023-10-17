@@ -1,4 +1,4 @@
-.TH _printf 3 "September 2023" "Farida Alsamaa and Yeabsira Moges"
+.TH _printf 3 "September 2023" "Farida Alsamaa and Yeabsira Moges "
 .SH NAME
 _printf - formatted output conversion
 
