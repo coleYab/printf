@@ -3,7 +3,7 @@
 /**
  * rot_13_printer - copies the rot_13edr
  * @va: the va list
- * @buffer_storge: variable to store the buffer
+ * @buffer_storge: variable to store ter
  * @index: the index of arr.
  * @len: the amount of printed chars.
  *
