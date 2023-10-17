@@ -39,5 +39,4 @@ void rev_copy(char *str, char *buffer_storage, int *index, int *len)
 		rev_copy(str + 1, buffer_storage, index, len);
 		copy(buffer_storage, *str, index, len);
 	}
-	return;
 }
