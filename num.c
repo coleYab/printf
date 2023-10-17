@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * dec_printer - prints the number in any base.
+ * dec_printer - prints the number in .
  *
  * @va: the variadic arg list.
  * @buffer_storge: the buffer to store chars.
