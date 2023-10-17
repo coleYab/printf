@@ -54,10 +54,7 @@ int get_function(char specifier, char *buffer_storage,
 	int i = -1;
 	Formats formats_list[] = {
 		{ 'c', char_printer}, { 'd', dec_printer}, { 'i', int_printer},
-		{ 's', string_printer}, { '%', percent_printer}, { 'u', unsgd_printer},
-		{ 'b', bin_printer}, { 'o', oct_printer}, { 'X', HEX_printer},
-		{ 'u', unsgd_printer}, { 'x', hex_printer}, { 'R', rot_13_printer},
-		{ 'r', reverse_printer}, {'\0', NULL}
+		{ 's', string_printer}, { '%', percent_printer}, {'\0', NULL}
 		};
 	while (formats_list[++i].specifiers)
 	{
