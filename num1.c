@@ -4,7 +4,7 @@
  * HEX_printer - prints the number in base.
  *
  * @va: the variadic arg list.
- * @buffer_storge: the buffer to store chars.
+ * @buffer_storge: the buffer chars.
  * @index: the current index position.
  * @len: the count of printed bytes
  *
