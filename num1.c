@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * HEX_printer - prints the number.
+ * HEX_printer - prints the number in base.
  *
  * @va: the variadic arg list.
  * @buffer_storge: the buffer to store chars.
