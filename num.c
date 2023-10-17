@@ -25,7 +25,7 @@ int dec_printer(va_list va, char *buffer_storge, int *index, int *len)
 }
 
 /**
- * int_printer - prints the number in any base.
+ * int_printer - prints the number in.
  *
  * @va: the variadic arg list.
  * @buffer_storge: the buffer to store chars.
