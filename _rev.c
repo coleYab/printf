@@ -26,7 +26,7 @@ int reverse_printer(va_list va, char *buffer_storge, int *index, int *len)
  * rev_copy - copies the reversed str.
  *
  * @str: the string literal.
- * @buffer_storage: the char arr to store buffer.
+ * @buffer_storage: the char arr to store buff.
  * @index: the current arr location.
  * @len: the len of chr printed.
  *

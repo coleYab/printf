@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * rot_13_printer - copies the rot_13ed str
+ * rot_13_printer - copies the rot_13edr
  * @va: the va list
  * @buffer_storge: variable to store the buffer
  * @index: the index of arr.
