@@ -20,7 +20,7 @@ int bin_printer(va_list va, char *buffer_storge, int *index, int *len)
 }
 
 /**
- * print_number_bin - prints the number in hex_capital.
+ * print_number_bin - prints the number in hex_capi.
  *
  * @arr: the pointer to a string.
  * @n: the number to be changed.

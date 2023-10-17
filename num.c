@@ -49,7 +49,7 @@ int int_printer(va_list va, char *buffer_storge, int *index, int *len)
 }
 
 /**
- * print_number - prints the number in hex_capital.
+ * print_number - prints the number in hex_capit.
  *
  * @arr: the pointer to a string.
  * @n: the number to be changed.
