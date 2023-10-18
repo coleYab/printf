@@ -10,7 +10,7 @@ We used the text [`Secrets of printf`](https://intranet.alxswe.com/rltoken/7Vw7a
 
 The code has to be generated with `gcc` by the following flags `-Wall`  `-Wextra`  `-Werror` `-pedantic` `-Wno-format` `-std=gnu89`.
 
-You can read more about the compilation flags [here](https:\\www.gnu.com). 
+You can read more about the compilation flags [here]([https:\\www.gnu.com](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html). 
 
 ```bash
 gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c
